@@ -15,17 +15,15 @@ Create a CLI to test the application's functionality.
 
 Create a front-end to test the application's functionality
 
-
 ### Front-end planning:
 
     - Add a text field and a button for adding new items
 
     - Add a button to clear all at once
 
-    - Previously added items to be loaded as list items of an unordered list. Inside the list items use input:checkbox for allowing to mark the items as completed.
+    - Added items to be loaded as list items of an unordered list. When clicked on items text-decoration changes to line-through
 
     - On the right side of the items use an 'X' symbol for allowing to delete the item.
-
 
 ### Back-end planning:
 

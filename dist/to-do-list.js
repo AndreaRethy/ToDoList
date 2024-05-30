@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // Declare DOM elements - Comment out before running tests
 const inputField = document.querySelector('#new-item-field');
 const addButton = document.querySelector('#add-new');
@@ -11,10 +10,17 @@ let itemsArray = [];
 addButton.addEventListener('click', () => {
     const newItem = inputField.value;
     addNewItem(itemsArray, newItem);
-    list.innerHTML += `<li>
-        <p>${newItem}</p>
-        
-    </li>`;
+    list.innerHTML += `<li>${newItem}</li>`;
+    const listItems = document.querySelectorAll('#to-do-list li');
+    listItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('done');
+        });
+    });
+});
+removeAll.addEventListener('click', () => {
+    clearList(itemsArray);
+    list.innerHTML = "";
 });
 // FUNCTIONS
 function addNewItem(array, newItem) {
@@ -25,4 +31,4 @@ function clearList(array) {
     array = [];
     console.log(array);
 }
-exports.default = addNewItem;
+// export default addNewItem;

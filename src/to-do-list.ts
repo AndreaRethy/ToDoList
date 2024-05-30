@@ -1,5 +1,3 @@
-
-
 // Declare DOM elements - Comment out before running tests
 const inputField = document.querySelector('#new-item-field') as HTMLInputElement;
 const addButton = document.querySelector('#add-new') as HTMLElement;
@@ -15,11 +13,20 @@ let itemsArray: string[] = [];
 addButton.addEventListener('click', () => {
     const newItem = inputField.value;
     addNewItem(itemsArray, newItem);
-    list.innerHTML += `<li>
-        <p>${newItem}</p>
-        
-    </li>`
+    list.innerHTML += `<li>${newItem}</li>`
+    const listItems = document.querySelectorAll('#to-do-list li');
+    listItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('done');
+        });
+    });
 });
+
+removeAll.addEventListener('click', () => {
+    clearList(itemsArray);
+    list.innerHTML = "";
+})
+
 
 
 // FUNCTIONS
@@ -35,4 +42,4 @@ function clearList(array: string[]) {
 
 
 
-export default addNewItem;
+// export default addNewItem;

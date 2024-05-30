@@ -47,6 +47,7 @@ ul {
 
 li {
     margin: 1rem 0;
+    cursor: pointer;
 }
 
 #new-item-field{
@@ -55,4 +56,8 @@ li {
     border-radius: 5px;
     border: 1px solid gray;
     text-indent: 1rem;
+}
+
+.done {
+    text-decoration: line-through;
 }
