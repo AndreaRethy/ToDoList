@@ -16,4 +16,16 @@ ts-node: ^10.9.2
 
 typescript: ^5.4.5
 
-  }
+### How to run the program in Browser (from Mac)
+
+`open index.html`
+
+#### CLI
+
+`npx tsc to-do-list.ts`
+
+`node to-do-list.js`
+
+### How to run test
+
+`npm test`
