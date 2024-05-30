@@ -32,11 +32,11 @@ button:active {
     opacity: 0.6;
 }
 
-button:first-of-type {
+#add-new {
     background-color: lightgreen;
 }
 
-button:last-of-type {
+#clear-all {
     background-color: lightpink;
 }
 

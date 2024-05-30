@@ -15,12 +15,21 @@ let itemsArray: string[] = [];
 addButton.addEventListener('click', () => {
     const newItem = inputField.value;
     addNewItem(itemsArray, newItem);
+    list.innerHTML += `<li>
+        <p>${newItem}</p>
+        
+    </li>`
 });
 
 
 // FUNCTIONS
 function addNewItem(array: string[] , newItem: string) {
     array.push(newItem);
+    console.log(array);
+}
+
+function clearList(array: string[]) {
+    array = [];
     console.log(array);
 }
 
