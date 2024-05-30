@@ -28,6 +28,10 @@ button {
     border-radius: 5px;
 }
 
+button:active {
+    opacity: 0.6;
+}
+
 button:first-of-type {
     background-color: lightgreen;
 }
@@ -45,7 +49,7 @@ li {
     margin: 1rem 0;
 }
 
-#new-item{
+#new-item-field{
     grid-column: span 2;
     height: 50px;
     border-radius: 5px;
