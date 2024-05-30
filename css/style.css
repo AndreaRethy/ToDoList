@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    font: 18px/1.5 sans-serif;
+    width: 80%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+h1 {
+    grid-column: span 2;
+}
+
+button {
+    height: 50px;
+    align-self: start;
+    border: none;
+    border-radius: 5px;
+}
+
+button:first-of-type {
+    background-color: lightgreen;
+}
+
+button:last-of-type {
+    background-color: lightpink;
+}
+
+ul {
+    grid-column: span 2;
+    list-style: none;
+}
+
+li {
+    margin: 1rem 0;
+}
+
+#new-item{
+    grid-column: span 2;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    text-indent: 1rem;
+}
