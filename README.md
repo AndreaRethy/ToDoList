@@ -9,41 +9,13 @@
 - Allow to remove a task from the list.
 - Show the list of tasks.
 
-Use tests to test the app's functionality.
-
-Create a CLI to test the application's functionality.
-
-Create a front-end to test the application's functionality
-
-### Front-end planning:
-
-    - Add a text field and a button for adding new items
-
-    - Add a button to clear all at once
-
-    - Added items to be loaded as list items of an unordered list. When clicked on items text-decoration changes to line-through
-
-    - On the right side of the items use an 'X' symbol for allowing to delete the item.
-
-### Back-end planning:
-
-    - Create an empty array for the items to be showed
-
-    - Every time the user adds a new item use .push to add the new item to the array
-
-    - In the same function add new item to the DOM
-
-    - Disable the option to use <> or {} or [] characters for security
-
-    - When the user selects clear all make to-do-list innerHTML empty
-
-    - When user selects items one by one to delete use .splice to remove the item from the array
-
-    - Reload the to-do-list
-
 ## Project Setup
 
-Node version v20.12.2
+Use node version v20.12.2
+
+```
+nvm use 20
+```
 
 ### devDependencies:
 
@@ -57,24 +29,35 @@ ts-node: ^10.9.2
 
 typescript: ^5.4.5
 
-### How to run the program in Browser (from Mac)
+## How to test (TypeScript)
+
+Make sure codeblock marked 'FRONTEND is commented out in **to-do-list.ts**
+
+Make sure export statement is uncommented in **to-do-list.ts**
+
+```
+npm test
+```
+
+## Front-end functionality:
+
+- To add an item: Type in the text box and click "Add New Item"
+- To Clear list: Click on "Clear All"
+- To mark an item item done simply click on the item
+- To remove an item click on it twice (first to mark done, second to remove)
+
+### Test Front-end (JavaScript)
+
+Uncomment code block marked 'FRONTEND' if necessary in **to-do-list.js**
+
+Comment out export statement in in **to-do-list.js**
 
 ```
 open index.html
 ```
 
-#### ~~CLI - CURRENTLY DOES NOT WORK~~
+To update .js file comment out export statement in to-do-list.ts and run:
 
 ```
-npx tsc to-do-list.ts
-```
-
-```
-node -e require("./to-do-list").addNewItem([], "bread" )
-```
-
-### How to run test
-
-```
-npm test
+npx tsc
 ```
