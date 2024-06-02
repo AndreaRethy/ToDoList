@@ -1,5 +1,7 @@
 # Andrea Réthy - Entrega 1.1: To Do List
 
+[![Test](https://github.com/AndreaRethy/ToDoList/actions/workflows/main.yml/badge.svg)](https://github.com/AndreaRethy/ToDoList/actions/workflows/main.yml)
+
 ## Introduction
 
     The goal of this exercise is to create a to-do list application using TypeScript and TDD. The application must have the following characteristics:
