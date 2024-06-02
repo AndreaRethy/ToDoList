@@ -1,5 +1,5 @@
 // Declare variables
-let itemsArray: string[] = [];
+let itemsArray: string[][] = [];
 
 /* ---- FRONT END ---- */
 // //Declare DOM elements - Comment out before running tests
@@ -49,18 +49,18 @@ let itemsArray: string[] = [];
 
 
 // FUNCTIONS
-function addNewItem(array: string[], newItem: string) {
-    array.push(newItem);
+function addNewItem(array: string[][], newItem: string) {
+    array.push([newItem]);
     console.log(array);
 }
 
-function clearList(array: string[]) {
+function clearList(array: string[][]) {
     array.length = 0;
     console.log(array);
 }
 
-function removeSelected(array: string[], selectedItem: string): number {
-    let index: number = array.findIndex(item => item === selectedItem)
+function removeSelected(array: string[][], selectedItem: string): number {
+    let index: number = array.findIndex(item => item[0] === selectedItem)
     if (index > -1) {
         array.splice(index, 1);
     }

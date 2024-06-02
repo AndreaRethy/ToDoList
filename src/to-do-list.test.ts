@@ -4,15 +4,16 @@ import { addNewItem, clearList, removeSelected }  from './to-do-list';
 
 // TEST 1 - Addition of new item
 test('Adding new items to existing array', () => {
-    let itemsArray: string[] = [];
+    let itemsArray: string[][] = [];
     addNewItem(itemsArray, 'bread')
+    addNewItem(itemsArray, 'cheese')
 
-    expect(itemsArray).toContain('bread');
+    expect(itemsArray).toEqual([['bread'], ['cheese']]);
 });
 
 // TEST 2 - Remove all items
 test('remove all items at once', () => {
-    let itemsArray: string[] = ['buy groceries', 'clean kitchen', 'feed the cat', 'finish homework'];
+    let itemsArray: string[][] = [['buy groceries'], ['clean kitchen'], ['feed the cat'], ['finish homework']];
 
     clearList(itemsArray);
 
@@ -21,10 +22,10 @@ test('remove all items at once', () => {
 
 // TEST 3 - Remove individual items
 test('remove selected item', () => {
-    let itemsArray: string[] = ['buy groceries', 'clean kitchen', 'feed the cat', 'finish homework'];
+    let itemsArray: string[][] = [['buy groceries'], ['clean kitchen'], ['feed the cat'], ['finish homework']];
     let selected: string = 'buy groceries'
 
     removeSelected(itemsArray, selected);
 
-    expect(itemsArray).not.toContain(selected);
+    expect(itemsArray).toEqual([['clean kitchen'], ['feed the cat'], ['finish homework']]);
 });
