@@ -1,7 +1,12 @@
 module.exports = {
-  transform: {
-    "^.+\\.(ts|tsx)$": "babel-jest"
-  },
-  testEnvironment: "node",
-  moduleFileExtensions: ["ts", "tsx", "js"],
+  preset: 'ts-jest',
+  testEnvironment: 'node',
 };
+
+// module.exports = {
+//   transform: {
+//     "^.+\\.(ts|tsx)$": "babel-jest"
+//   },
+//   testEnvironment: "node",
+//   moduleFileExtensions: ["ts", "tsx", "js"],
+// };
