@@ -20,29 +20,36 @@ removeAll.addEventListener('click', () => {
 //Funtions for frontend
 function renderItems() {
     inputField.value = "";
-list.innerHTML = "";
-itemsArray.forEach((item) =>{
-    list.innerHTML += `<li>${item}</li>`
-});
-addListener();
+    list.innerHTML = "";
+    itemsArray.forEach((item) => {
+        if (item[1]) {
+            list.innerHTML += `<li class="${item[1]}">${item[0]}</li>`;
+        }
+        else {
+            list.innerHTML += `<li>${item[0]}</li>`;
+        }
+    });
+    addListener();
 }
 function addListener() {
     const listItems = document.querySelectorAll('#to-do-list li');
-    listItems.forEach(item => {
+    listItems.forEach((item, index) => {
         item.addEventListener('click', () => {
-        if (item.classList.contains('done')){
-             removeSelected(itemsArray, item.innerText);
-             renderItems();
-        } else {
-            item.classList.toggle('done');
-        }
+            if (item.classList.contains('done')) {
+                removeSelected(itemsArray, item.innerText);
+                renderItems();
+            }
+            else {
+                itemsArray[index].push('done');
+                item.classList.toggle('done');
+            }
         });
     });
- }
+}
 /* ./FRONT END */
 // FUNCTIONS
 function addNewItem(array, newItem) {
-    array.push(newItem);
+    array.push([newItem]);
     console.log(array);
 }
 function clearList(array) {
@@ -50,7 +57,7 @@ function clearList(array) {
     console.log(array);
 }
 function removeSelected(array, selectedItem) {
-    let index = array.findIndex(item => item === selectedItem);
+    let index = array.findIndex(item => item[0] === selectedItem);
     if (index > -1) {
         array.splice(index, 1);
     }
