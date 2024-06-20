@@ -63,4 +63,3 @@ function removeSelected(array, selectedItem) {
     }
     return index;
 }
-// export {addNewItem, clearList, removeSelected};
