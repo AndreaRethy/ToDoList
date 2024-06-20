@@ -1,7 +1,5 @@
 # Andrea Réthy - Entrega 1.1: To Do List
 
-[![Test](https://github.com/AndreaRethy/ToDoList/actions/workflows/main.yml/badge.svg)](https://github.com/AndreaRethy/ToDoList/actions/workflows/main.yml)
-
 ## Repository
 
 https://github.com/AndreaRethy/ToDoList.git
@@ -23,35 +21,27 @@ Use node version v20.12.2
 nvm use 20
 ```
 
-## How to test (TypeScript)
-
-Make sure codeblock marked 'FRONTEND is commented out in **to-do-list.ts**
-
-Make sure export statement is uncommented in **to-do-list.ts**
+## Test Backend
 
 ```
 npm test
 ```
 
-## Front-end functionality:
+## Front-end:
 
-- To add an item: Type in the text box and click "Add New Item"
-- To Clear list: Click on "Clear All"
-- To mark an item item done simply click on the item
-- To remove an item click on it twice (first to mark done, second to remove)
+To test front-end simply open the index.html file in your browser. Right click in the html file and select 'Open in Default Browser' or 'Open in Other Browsers'
 
-### Test Front-end (JavaScript)
+![1718873012670](image/README/1718873012670.png)
 
-Uncomment code block marked 'FRONTEND' if necessary in **to-do-list.js**
-
-Comment out export statement in in **to-do-list.js**
+To open from command line:
 
 ```
 open index.html
 ```
 
-To update .js file comment out export statement in to-do-list.ts and run:
+### What to test in front-end
 
-```
-npx tsc
-```
+- To add an item: Type in the text box and click "Add New Item"
+- To Clear list: Click on "Clear All"
+- To mark an item item done simply click on the item
+- To remove an item click on it twice (first to mark done, second to remove)
