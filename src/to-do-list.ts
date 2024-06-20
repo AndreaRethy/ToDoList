@@ -64,6 +64,14 @@ function clearList(array: string[][]) {
     console.log(array);
 }
 
+function markDone(array: string[][], selectedItem: string): number {
+    let index: number = array.findIndex(item => item[0] === selectedItem)
+    if (index > -1) {
+        array[index].push('done')
+    }
+    return index;
+}
+
 function removeSelected(array: string[][], selectedItem: string): number {
     let index: number = array.findIndex(item => item[0] === selectedItem)
     if (index > -1) {
@@ -72,4 +80,4 @@ function removeSelected(array: string[][], selectedItem: string): number {
     return index;
 }
 
-export {addNewItem, clearList, removeSelected};
+export {addNewItem, clearList, removeSelected, markDone};

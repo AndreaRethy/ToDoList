@@ -1,5 +1,5 @@
 // Test for adding new items
-import { addNewItem, clearList, removeSelected }  from './to-do-list';
+import { addNewItem, clearList, removeSelected, markDone }  from './to-do-list';
 
 
 // TEST 1 - Addition of new item
@@ -20,7 +20,18 @@ test('remove all items at once', () => {
     expect(itemsArray.length).toBe(0);
 });
 
+
 // TEST 3 - Remove individual items
+test('mark selected item done', () => {
+    let itemsArray: string[][] = [['buy groceries'], ['clean kitchen'], ['feed the cat'], ['finish homework']];
+    let selected: string = 'buy groceries'
+
+    markDone(itemsArray, selected);
+
+    expect(itemsArray).toEqual([['buy groceries', 'done'], ['clean kitchen'], ['feed the cat'], ['finish homework']]);
+});
+
+// TEST 4 - Remove individual items
 test('remove selected item', () => {
     let itemsArray: string[][] = [['buy groceries'], ['clean kitchen'], ['feed the cat'], ['finish homework']];
     let selected: string = 'buy groceries'
